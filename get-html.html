@@ -5,16 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wangEditor default mode</title>
+  <title>wangEditor get HTML</title>
   <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
   <link href="./css/layout.css" rel="stylesheet">
+  <link href="./css/view.css" rel="stylesheet">
 
   <script src="./js/custom-elem.js"></script>
 </head>
 
 <body>
-  <demo-nav title="wangEditor default mode"></demo-nav>
+  <demo-nav title="wangEditor get HTML"></demo-nav>
   <div class="page-container">
     <div class="page-left">
       <demo-menu></demo-menu>
@@ -23,14 +24,14 @@
       <!-- 编辑器 DOM -->
       <div style="border: 1px solid #ccc;">
         <div id="editor-toolbar" style="border-bottom: 1px solid #ccc;"></div>
-        <div id="editor-text-area" style="height: 500px"></div>
+        <div id="editor-text-area" style="height: 350px"></div>
       </div>
 
-      <!-- 内容状态 -->
-      <p style="background-color: #f1f1f1;">
-        Text length: <span id="total-length"></span>；
-        Selected text length: <span id="selected-length"></span>；
-      </p>
+      <!-- 显示内容 -->
+      <div style="margin-top: 20px;">
+        <textarea id="editor-content-textarea" style="width: 100%; height: 100px; outline: none;" readonly></textarea>
+      </div>
+      <div id="editor-content-view" class="editor-content-view"></div>
     </div>
   </div>
 
@@ -44,7 +45,7 @@
 
     window.editor = E.createEditor({
       selector: '#editor-text-area',
-      html: '<p><br></p>',
+      html: '<p>hello&nbsp;world</p><p><br></p>',
       config: {
         placeholder: 'Type here...',
         MENU_CONF: {
@@ -54,14 +55,9 @@
           }
         },
         onChange(editor) {
-          console.log(editor.getHtml())
-
-          // 选中文字
-          const selectionText = editor.getSelectionText()
-          document.getElementById('selected-length').innerHTML = selectionText.length
-          // 全部文字
-          const text = editor.getText().replace(/\n|\r/mg, '')
-          document.getElementById('total-length').innerHTML = text.length
+          const html = editor.getHtml()
+          document.getElementById('editor-content-view').innerHTML = html
+          document.getElementById('editor-content-textarea').value = html
         }
       }
     })

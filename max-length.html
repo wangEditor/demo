@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wangEditor default mode</title>
+  <title>wangEditor maxlength</title>
   <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
   <link href="./css/layout.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <demo-nav title="wangEditor default mode"></demo-nav>
+  <demo-nav title="wangEditor maxlength"></demo-nav>
   <div class="page-container">
     <div class="page-left">
       <demo-menu></demo-menu>
@@ -42,11 +42,18 @@
     const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
     E.i18nChangeLanguage(LANG)
 
+    // 定义最大长度
+    const MAX_LENGTH = 30
+
     window.editor = E.createEditor({
       selector: '#editor-text-area',
-      html: '<p><br></p>',
+      html: `<p>MaxLength: ${MAX_LENGTH}</p><p><br></p>`,
       config: {
         placeholder: 'Type here...',
+        maxLength: MAX_LENGTH,
+        onMaxLength(editor) {
+          alert('Trigger maxlength callback')
+        },
         MENU_CONF: {
           uploadImage: {
             fieldName: 'your-fileName',
