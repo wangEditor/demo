@@ -209,21 +209,21 @@ const MENU_CONF = [
     },
   },
   {
-    'zh-CN': { text: 'Vue2 demo', link: 'https://www.wangeditor.com/guide/for-frame.html#vue2' },
-    en: { text: 'Vue2 demo', link: 'https://www.wangeditor.com/en/guide/for-frame.html#vue2' },
+    'zh-CN': { text: 'Vue2 demo', link: 'https://www.wangeditor.com/v5/for-frame.html#vue2' },
+    en: { text: 'Vue2 demo', link: 'https://www.wangeditor.com/en/v5/for-frame.html#vue2' },
   },
   {
-    'zh-CN': { text: 'Vue3 demo', link: 'https://www.wangeditor.com/guide/for-frame.html#vue3' },
-    en: { text: 'Vue3 demo', link: 'https://www.wangeditor.com/en/guide/for-frame.html#vue3' },
+    'zh-CN': { text: 'Vue3 demo', link: 'https://www.wangeditor.com/v5/for-frame.html#vue3' },
+    en: { text: 'Vue3 demo', link: 'https://www.wangeditor.com/en/v5/for-frame.html#vue3' },
   },
   {
     'zh-CN': {
       text: 'React demo',
-      link: 'https://www.wangeditor.com/guide/for-frame.html#react',
+      link: 'https://www.wangeditor.com/v5/for-frame.html#react',
     },
     en: {
       text: 'React demo',
-      link: 'https://www.wangeditor.com/en/guide/for-frame.html#react',
+      link: 'https://www.wangeditor.com/en/v5/for-frame.html#react',
     },
   },
   {
