@@ -11,17 +11,17 @@
   <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
 </head>
 
-<body style="height:600px; overflow: hidden;">
+<body style="height:500px; overflow: hidden;">
   <div style="border: 1px solid #ccc;">
     <div id="editor-toolbar" style="border-bottom: 1px solid #ccc;"></div>
-    <div id="editor-text-area" style="height: 500px"></div>
+    <div id="editor-text-area" style="height: 450px"></div>
   </div>
 
   <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
   <script>
     const E = window.wangEditor
 
-    const htmlContent = `<h3>使用简单</h3><p>10 行代码即可创建一个功能健全的富文本编辑器，可查看 <a href="https://www.wangeditor.com/demo/index.html" target="_blank">demo 示例</a>。如用于 Vue React 可参考<a href="https://www.wangeditor.com/v5/for-frame.html" target="_blank">这里</a>。</p><pre><code class="language-javascript">import '@wangeditor/editor/dist/css/style.css'
+    const htmlContent = `<p>10 行代码即可创建一个功能健全的富文本编辑器。</p><pre><code class="language-javascript">import '@wangeditor/editor/dist/css/style.css'
 import { createEditor, createToolbar } from '@wangeditor/editor'
 
 // 创建编辑器
@@ -32,7 +32,7 @@ const editor = createEditor({
 const toolbar = createToolbar({
   editor,
   selector: '#toolbar-container'
-})</code></pre><h3>兼容性</h3><ul><li>兼容主流的 PC 浏览器，如 Chrome Firefox Safari Edge 等</li><li>暂不支持移动端编辑（支持移动端查看）</li><li><strong>不再支持 IE 浏览器</strong></li></ul><p><br></p>`
+})</code></pre><p><br></p>`
 
     window.editor = E.createEditor({
       selector: '#editor-text-area',
