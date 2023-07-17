@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>demo for home</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+</head>
+
+<body style="height:600px; overflow: hidden;">
+  <div style="border: 1px solid #ccc;">
+    <div id="editor-toolbar" style="border-bottom: 1px solid #ccc;"></div>
+    <div id="editor-text-area" style="height: 500px"></div>
+  </div>
+
+  <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+  <script>
+    const E = window.wangEditor
+
+    window.editor = E.createEditor({
+      selector: '#editor-text-area',
+      html: '<p><br></p>',
+      config: {
+        placeholder: 'Type here...',
+        MENU_CONF: {
+          uploadImage: {
+            fieldName: 'your-fileName',
+            base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+          }
+        },
+      }
+    })
+
+    window.toolbar = E.createToolbar({
+      editor,
+      selector: '#editor-toolbar',
+      config: {}
+    })
+  </script>
+</body>
+
+</html>
